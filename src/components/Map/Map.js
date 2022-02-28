@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { MapContainer } from 'react-leaflet';
+import { MapContainer, LayersControl } from 'react-leaflet';
+import BaseLayersFactory from './components/BaseLayersFactory';
 
 import 'leaflet/dist/leaflet.css';
 
@@ -21,6 +22,11 @@ const Map = () => {
       bounds={initBounds}
       zoom={8}
       scrollWheelZoom={false}>
+
+      <LayersControl position="topleft">
+        <BaseLayersFactory />
+      </LayersControl>
+
     </MapWrapper>
   );
 };
