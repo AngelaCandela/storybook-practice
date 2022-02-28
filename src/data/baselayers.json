@@ -1,0 +1,17 @@
+[
+    {
+        "label": "Default",
+        "url":"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        "default": true
+    },
+    {
+        "label": "Light",
+        "url": "https://{s}.basemaps.cartocdn.com/rastertiles/light_all/{z}/{x}/{y}.png",
+        "default": false
+    },
+    {
+        "label": "Dark",
+        "url":"https://{s}.basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png",
+        "default": false
+    }
+]
