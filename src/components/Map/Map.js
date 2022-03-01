@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { MapContainer, LayersControl } from 'react-leaflet';
-import BaseLayersFactory from './components/BaseLayersFactory';
+import BaseLayersFactory from './components/layers/BaseLayersFactory';
 
 import 'leaflet/dist/leaflet.css';
 

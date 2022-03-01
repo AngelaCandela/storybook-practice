@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import BaseLayer from './BaseLayer';
 
-import baselayers from '../../../data/baselayers.json';
+import baselayers from '../../../../data/baselayers.json';
 
 const BaseLayersFactory = () => {
 
