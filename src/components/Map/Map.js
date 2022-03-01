@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { MapContainer, LayersControl } from 'react-leaflet';
 import BaseLayersFactory from './components/layers/BaseLayersFactory';
 import Layer from "./components/layers/Layer";
+import L from 'leaflet';
+import icon from "./icons/icon";
 
 import 'leaflet/dist/leaflet.css';
 
@@ -19,6 +21,10 @@ const initBounds = [
   [45.9312500000000341, 7.6656250000000341]
 ];
 
+const pointToLayer = (feature, latlng) => {
+  return L.marker(latlng, { icon: icon }); // Set a custom icon
+};
+
 const Map = () => {
   return (
     <MapWrapper
@@ -32,6 +38,7 @@ const Map = () => {
 
       <Layer
         data={layerData}
+        pointToLayer={pointToLayer}
       />
     </MapWrapper>
   );

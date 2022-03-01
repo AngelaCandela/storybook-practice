@@ -4,6 +4,7 @@ import { FeatureGroup, GeoJSON } from "react-leaflet";
 
 const Layer = ({
   data,
+  pointToLayer,
   children
 }) => {
 
@@ -20,7 +21,7 @@ const Layer = ({
       <GeoJSON
         key={`map_hovered_feature_${hoveredFeature}_clicked_feature_${clickedFeature}`}
         data={data}
-        pointToLayer={pointToLayerDefault}
+        pointToLayer={pointToLayer || pointToLayerDefault}
       {children}
     </FeatureGroup>
   );
