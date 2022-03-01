@@ -4,6 +4,7 @@ import { FeatureGroup, GeoJSON } from "react-leaflet";
 
 const Layer = ({
   data,
+  style,
   pointToLayer,
   handleClick,
   handleHover,
