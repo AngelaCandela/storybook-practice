@@ -11,6 +11,7 @@ const Layer = ({
   handleHover,
   useTooltip,
   labelsList,
+  handleCenterMapOnPoint,
   useFeaturesOwnIcons,
   children
 }) => {
