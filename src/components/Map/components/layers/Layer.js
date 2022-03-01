@@ -1,5 +1,6 @@
 import { useState } from "react";
 import L from 'leaflet';
+import icon from "../../icons/icon";
 import { FeatureGroup, GeoJSON, Tooltip } from "react-leaflet";
 
 const Layer = ({
@@ -10,6 +11,7 @@ const Layer = ({
   handleHover,
   useTooltip,
   labelsList,
+  useFeaturesOwnIcons,
   children
 }) => {
 
@@ -17,8 +19,19 @@ const Layer = ({
   const [clickedFeature, setClickedFeature] = useState(null);
 
   const pointToLayerDefault = (feature, latlng) => {
-    return L.circleMarker(latlng, null);
-    // return L.marker(latlng, { icon: icon }); // Set a custom icon
+    if (useFeaturesOwnIcons) {
+      getFeaturesOwnIcons(feature, latlng);
+    } else {
+      return L.circleMarker(latlng, null);
+      // return L.marker(latlng, { icon: icon }); // Set a custom icon
+    }
+  };
+
+  const getFeaturesOwnIcons = (feature, latlng) => {
+    return L.marker(latlng, {
+      icon: icon, //replace with route to feature's own icon e.g. feature.layer.feature.properties.icon
+    });
+  };
 
   const handleHoverDefault = (feature) => {
     setHoveredFeature(feature);
