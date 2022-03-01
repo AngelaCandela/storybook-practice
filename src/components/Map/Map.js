@@ -25,6 +25,14 @@ const pointToLayer = (feature, latlng) => {
   return L.marker(latlng, { icon: icon }); // Set a custom icon
 };
 
+const handleHover = (feature) => {
+  console.log(`hovered feature: ${feature}`);
+};
+
+const handleClick = (feature) => {
+  console.log(`clicked feature: ${feature}`);
+};
+
 const Map = () => {
   return (
     <MapWrapper
@@ -39,6 +47,8 @@ const Map = () => {
       <Layer
         data={layerData}
         pointToLayer={pointToLayer}
+        handleHover={handleHover}
+        handleClick={handleClick}
       />
     </MapWrapper>
   );
