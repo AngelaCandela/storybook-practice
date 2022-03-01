@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import { MapContainer, LayersControl } from 'react-leaflet';
 import BaseLayersFactory from './components/layers/BaseLayersFactory';
+import Layer from "./components/layers/Layer";
 
 import 'leaflet/dist/leaflet.css';
+
+import layerData from "../../data/pointsLayerData.json";
 
 // Style React Leaflet's MapContainer to take 100% of the page's size
 const MapWrapper = styled(MapContainer)`
@@ -27,6 +30,9 @@ const Map = () => {
         <BaseLayersFactory />
       </LayersControl>
 
+      <Layer
+        data={layerData}
+      />
     </MapWrapper>
   );
 };
