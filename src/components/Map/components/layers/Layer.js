@@ -1,6 +1,6 @@
 import { useState } from "react";
 import L from 'leaflet';
-import { FeatureGroup, GeoJSON } from "react-leaflet";
+import { FeatureGroup, GeoJSON, Tooltip } from "react-leaflet";
 
 const Layer = ({
   data,
@@ -8,6 +8,7 @@ const Layer = ({
   pointToLayer,
   handleClick,
   handleHover,
+  useTooltip,
   children
 }) => {
 
@@ -44,6 +45,10 @@ const Layer = ({
           },
         }}
       />
+      {useTooltip &&
+        <Tooltip direction="top" offset={[0, -10]} opacity={1}>
+        </Tooltip>
+      }
       {children}
     </FeatureGroup>
   );

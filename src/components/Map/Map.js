@@ -49,6 +49,7 @@ const Map = () => {
         pointToLayer={pointToLayer}
         handleHover={handleHover}
         handleClick={handleClick}
+        useTooltip
       />
     </MapWrapper>
   );
