@@ -9,6 +9,7 @@ const Layer = ({
   handleClick,
   handleHover,
   useTooltip,
+  labelsList,
   children
 }) => {
 
@@ -28,6 +29,13 @@ const Layer = ({
     setClickedFeature(feature);
     console.log(`clicked feature: ${feature} from default`);
   };
+
+  const createTooltipContent = (labels) => {
+    let tooltipContent = "";
+    labels.forEach((label) => {
+      tooltipContent += `${label}: feature's ${label} `;
+    });
+    return tooltipContent;
   };
 
   return (
@@ -47,6 +55,7 @@ const Layer = ({
       />
       {useTooltip &&
         <Tooltip direction="top" offset={[0, -10]} opacity={1}>
+          {labelsList ? createTooltipContent(labelsList) : "Default text"}
         </Tooltip>
       }
       {children}

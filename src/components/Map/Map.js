@@ -50,6 +50,7 @@ const Map = () => {
         handleHover={handleHover}
         handleClick={handleClick}
         useTooltip
+        labelsList={["name", "province", "region"]}
       />
     </MapWrapper>
   );
