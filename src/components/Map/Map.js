@@ -51,7 +51,7 @@ const Map = () => {
         handleHover={handleHover}
         handleClick={handleClick}
         useTooltip
-        labelsList={["name", "province", "region"]}
+        //tooltipContent="hola"
       />
 
       <CustomControl>Hola</CustomControl>

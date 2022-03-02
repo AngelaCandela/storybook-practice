@@ -10,7 +10,7 @@ const Layer = ({
   handleClick,
   handleHover,
   useTooltip,
-  labelsList,
+  tooltipContent,
   handleCenterMapOnPoint,
   useFeaturesOwnIcons,
   children
@@ -44,14 +44,6 @@ const Layer = ({
     console.log(`clicked feature: ${feature} from default`);
   };
 
-  const createTooltipContent = (labels) => {
-    let tooltipContent = "";
-    labels.forEach((label) => {
-      tooltipContent += `${label}: feature's ${label} `;
-    });
-    return tooltipContent;
-  };
-
   return (
     <FeatureGroup>
       <GeoJSON
@@ -69,7 +61,7 @@ const Layer = ({
       />
       {useTooltip &&
         <Tooltip direction="top" offset={[0, -10]} opacity={1}>
-          {labelsList ? createTooltipContent(labelsList) : "Default text"}
+          {tooltipContent || "Default text"}
         </Tooltip>
       }
       {children}
