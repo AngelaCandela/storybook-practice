@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { MapContainer, LayersControl } from 'react-leaflet';
 import BaseLayersFactory from './components/layers/BaseLayersFactory';
 import Layer from "./components/layers/Layer";
+import CustomControl from "./components/controls/CustomControl.tsx";
 import L from 'leaflet';
 import icon from "./icons/icon";
 
@@ -52,6 +53,8 @@ const Map = () => {
         useTooltip
         labelsList={["name", "province", "region"]}
       />
+
+      <CustomControl>Hola</CustomControl>
     </MapWrapper>
   );
 };
